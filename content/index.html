@@ -15,6 +15,23 @@
         max-width: 100%;
         height: auto;
       }
+      img:hover {
+        animation: dance 2s 0s infinite;
+      }
+      @keyframes dance {
+        0% {
+          transform: rotate(0deg) scale(1);
+        }
+        10% {
+          transform: rotate(15deg) scale(0.3);
+        }
+        50% {
+          transform: rotate(-180deg) scale(1.1);
+        }
+        100% {
+          transform: rotate(-360deg) scale(1);
+        }
+      }
       h1 {
         font-size: 4em;
       }
