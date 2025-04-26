@@ -11,12 +11,12 @@
         text-align: center;
         margin: 0;
       }
-      img {
+      .bansibo {
         max-width: 100%;
         height: auto;
-      }
-      img:hover {
-        animation: dance 2s 0s infinite;
+        &:hover {
+          animation: dance 2s 0s infinite;
+        }
       }
       @keyframes dance {
         0% {
@@ -38,11 +38,17 @@
       nav {
         background-color: #ad00dd;
         display: flex;
-        justify-content: end;
+        align-items: center;
+        padding: 0 6px;
+        .logo {
+          width: 50px;
+          height: 50px;
+          margin-right: auto;
+        }
         a {
           color: white;
           text-decoration: none;
-          padding: 1em;
+          padding: 20px;
           font-size: 1.5em;
         }
       }
@@ -50,10 +56,11 @@
   </head>
   <body>
     <nav>
+      <img src="logo.png" class="logo" />
       <a href="index">Inicio</a>
       <a href="https://github.com/luis-y-bansibo">GitHub</a>
     </nav>
     <h1>Hola, me llamo Luis 💻💿⌨️🕹️</h1>
-    <img src="carpeta-de-fotos/bansibo.png">
+    <img src="carpeta-de-fotos/bansibo.png" class="bansibo" alt="Bansibo" />
   </body>
 </html>
