@@ -45,11 +45,14 @@
         align-items: center;
         padding: 0 6px;
         .logo {
-          width: 50px;
-          height: 50px;
           margin-right: auto;
+          display: flex;
+          img {
+            width: 50px;
+            height: 50px;
+          }
         }
-        a {
+        .link {
           color: white;
           text-decoration: none;
           padding: 20px;
@@ -60,9 +63,9 @@
   </head>
   <body>
     <nav>
-      <img src="logo.png" class="logo" />
-      <a href="index">Inicio</a>
-      <a href="https://github.com/luis-y-bansibo">GitHub</a>
+      <a href="." class="logo"><img src="logo.png" /></a>
+      <a href="." class="link">Inicio</a>
+      <a href="https://github.com/luis-y-bansibo" class="link">GitHub</a>
     </nav>
     <h1>Hola, me llamo Luis 💻💿⌨️🕹️</h1>
     <img src="carpeta-de-fotos/bansibo.png" class="bansibo" alt="Bansibo" />
