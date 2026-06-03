@@ -44,27 +44,35 @@
         display: flex;
         align-items: center;
         padding: 0 6px;
-        .logo {
-          margin-right: auto;
-          display: flex;
-          img {
-            width: 50px;
-            height: 50px;
-          }
-        }
-        .link {
-          color: white;
-          text-decoration: none;
-          padding: 20px;
-          font-size: 1.5em;
-        }
+      }
+      .logo {
+        margin-right: auto;
+        display: flex;
+      }
+      .logo img {
+        width: 50px;
+        height: 50px;
+      }
+      .link {
+        color: white;
+        text-decoration: none;
+        padding: 20px;
+        font-size: 1.5em;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35em;
+      }
+      .icon {
+        display: inline-flex;
+        font-size: 1.2em;
       }
     </style>      
   </head>
   <body>
     <nav>
-      <a href="." class="logo"><img src="logo.png" /></a>
-      <a href="." class="link">Inicio</a>
+      <a href="index.html" class="logo"><img src="logo.png" alt="Logo" /></a>
+      <a href="index.html" class="link"><span class="icon"></span>Inicio</a>
+      <a href="sobremi.html" class="link"><span class="icon"></span>Sobre mí</a>
       <a href="https://github.com/luis-y-bansibo" class="link">GitHub</a>
     </nav>
     <h1>Hola, vienvenido a mi web ⌨️💻🖱️💿️🕹️</h1>
