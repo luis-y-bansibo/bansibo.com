@@ -1,211 +1,154 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" href="logo.png" />
-    <title>LEGO - Bansibo</title>
-    <style>
-      body {
-        margin: 0;
-        font-family: sans-serif;
-        background-color: #ffffff;
-        color: #222;
-        text-align: center;
-      }
-      nav {
-        background-color: #00ccff;
-        display: flex;
-        align-items: center;
-        padding: 10px 12px;
-      }
-      .logo {
-        margin-right: auto;
-        display: flex;
-        align-items: center;
-      }
-      .logo img {
-        width: 45px;
-        height: 45px;
-      }
-      .link {
-        color: white;
-        text-decoration: none;
-        padding: 14px 18px;
-        font-size: 1.1em;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35em;
-      }
-      main {
-        max-width: 720px;
-        margin: 32px auto;
-        padding: 0 16px;
-      }
-      h1 {
-        font-size: 3rem;
-        margin-bottom: 0.35em;
-      }
-      p {
-        line-height: 1.7;
-        font-size: 1.15rem;
-      }
-      .lego-image {
-        width: 220px;
-        max-width: 100%;
-        margin: 20px auto;
-        display: block;
-      }
-      .lego-list {
-        text-align: left;
-        display: inline-block;
-        margin: 0 auto;
-        padding: 0;
-        list-style: none;
-        font-size: 1.1rem;
-      }
-      .lego-list li {
-        margin: 0.6em 0;
-      }
-      .gallery {
-        margin: 36px auto 0;
-        max-width: 960px;
-        text-align: left;
-      }
-      .gallery h2 {
-        font-size: 2rem;
-        margin-bottom: 0.8em;
-      }
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 16px;
-      }
-      .gallery-grid img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 12px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-        cursor: zoom-in;
-        transition: transform 0.2s ease;
-      }
-      .gallery-grid img:hover {
-        transform: translateY(-3px);
-      }
-      .fullscreen-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.94);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity 0.2s ease, visibility 0.2s ease;
-        z-index: 999;
-      }
-      .fullscreen-overlay.visible {
-        visibility: visible;
-        opacity: 1;
-      }
-      .fullscreen-overlay img {
-        max-width: 100%;
-        max-height: 100%;
-        border-radius: 14px;
-        box-shadow: 0 0 48px rgba(0, 0, 0, 0.45);
-      }
-      .fullscreen-overlay .close-btn {
-        position: absolute;
-        top: 18px;
-        right: 18px;
-        width: 42px;
-        height: 42px;
-        border: none;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.16);
-        color: #fff;
-        font-size: 1.3rem;
-        cursor: pointer;
-      }
-      .fullscreen-overlay .close-btn:hover {
-        background: rgba(255, 255, 255, 0.25);
-      }
-    </style>
-  </head>
-  <body>
-    <nav>
-      <a href="index.html" class="logo"><img src="logo.png" alt="Logo" /></a>
-      <a href="index.html" class="link"><span class="icon" aria-hidden="true"></span>Inicio</a>
-      <a href="sobremi.html" class="link"><span class="icon"></span>Sobre mí</a>
-      <a href="lego.html" class="link"><span class="icon"></span>LEGO</a>
-      <a href="https://github.com/luis-y-bansibo" class="link">GitHub</a>
-    </nav>
-    <main>
-      <h1>Mi mundo LEGO</h1>
-      <p>Este es el lugar donde cuento mi proyecto de LEGO: el pueblo que estoy construyendo con mi hermano.</p>
-      <img src="carpeta-de-fotos/bansibo.png" alt="Bansibo LEGO" class="lego-image" />
-      <ul class="lego-list">
-        <li>Construyo casas y calles de LEGO.</li>
-        <li>Me encanta usar piezas de colores y crear historias.</li>
-        <li>id mas abajo y encontrareis las fotos del pueblo de LEGO.</li>
-      </ul>
-      <section class="gallery">
-        <h2>Galería de fotos LEGO</h2>
-        <div class="gallery-grid">
-          <img src="lego/IMG_1789.jpeg" alt="LEGO foto 1789" />
-          <img src="lego/IMG_1790.jpeg" alt="LEGO foto 1790" />
-          <img src="lego/IMG_1791.jpeg" alt="LEGO foto 1791" />
-          <img src="lego/IMG_1792.jpeg" alt="LEGO foto 1792" />
-          <img src="lego/IMG_1794.jpeg" alt="LEGO foto 1794" />
-          <img src="lego/IMG_1795.jpeg" alt="LEGO foto 1795" />
-          <img src="lego/IMG_1796.jpeg" alt="LEGO foto 1796" />
-          <img src="lego/IMG_1797.jpeg" alt="LEGO foto 1797" />
-          <img src="lego/IMG_1798.jpeg" alt="LEGO foto 1798" />
-          <img src="lego/IMG_1799.jpeg" alt="LEGO foto 1799" />
-        </div>
-      </section>
-      <div class="fullscreen-overlay" id="fullscreenOverlay" aria-hidden="true">
-        <button class="close-btn" id="closeOverlay" aria-label="Cerrar imagen">×</button>
-        <img src="" alt="" id="fullscreenImage" />
-      </div>
-    </main>
-    <script>
-      const galleryImages = document.querySelectorAll('.gallery-grid img');
-      const overlay = document.getElementById('fullscreenOverlay');
-      const overlayImage = document.getElementById('fullscreenImage');
-      const closeButton = document.getElementById('closeOverlay');
+---
+layout: base.njk
+title: LEGO
+---
 
-      function openFullscreen(src, alt) {
-        overlayImage.src = src;
-        overlayImage.alt = alt;
-        overlay.classList.add('visible');
-        overlay.setAttribute('aria-hidden', 'false');
-      }
+<style>
+  .lego-image {
+    width: 220px;
+    max-width: 100%;
+    margin: 20px auto;
+    display: block;
+  }
+  .lego-list {
+    text-align: left;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    font-size: 1.1rem;
+  }
+  .lego-list li {
+    margin: 0.6em 0;
+  }
+  .gallery {
+    margin: 36px auto 0;
+    max-width: 960px;
+    text-align: left;
+  }
+  .gallery h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8em;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+  }
+  .gallery-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    cursor: zoom-in;
+    transition: transform 0.2s ease;
+  }
+  .gallery-grid img:hover {
+    transform: translateY(-3px);
+  }
+  .fullscreen-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.94);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 999;
+  }
+  .fullscreen-overlay.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+  .fullscreen-overlay img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 14px;
+    box-shadow: 0 0 48px rgba(0, 0, 0, 0.45);
+  }
+  .fullscreen-overlay .close-btn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+  .fullscreen-overlay .close-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+</style>
 
-      function closeFullscreen() {
-        overlay.classList.remove('visible');
-        overlay.setAttribute('aria-hidden', 'true');
-        overlayImage.src = '';
-      }
+<h1>Mi mundo LEGO</h1>
+<p>Este es el lugar donde cuento mi proyecto de LEGO: el pueblo que estoy construyendo con mi hermano.</p>
+<img src="/carpeta-de-fotos/bansibo.png" alt="Bansibo LEGO" class="lego-image" />
+<ul class="lego-list">
+  <li>Construyo casas y calles de LEGO.</li>
+  <li>Me encanta usar piezas de colores y crear historias.</li>
+  <li>id mas abajo y encontrareis las fotos del pueblo de LEGO.</li>
+</ul>
+<section class="gallery">
+  <h2>Galería de fotos LEGO</h2>
+  <div class="gallery-grid">
+    <img src="IMG_1789.jpeg" alt="LEGO foto 1789" />
+    <img src="IMG_1790.jpeg" alt="LEGO foto 1790" />
+    <img src="IMG_1791.jpeg" alt="LEGO foto 1791" />
+    <img src="IMG_1792.jpeg" alt="LEGO foto 1792" />
+    <img src="IMG_1794.jpeg" alt="LEGO foto 1794" />
+    <img src="IMG_1795.jpeg" alt="LEGO foto 1795" />
+    <img src="IMG_1796.jpeg" alt="LEGO foto 1796" />
+    <img src="IMG_1797.jpeg" alt="LEGO foto 1797" />
+    <img src="IMG_1798.jpeg" alt="LEGO foto 1798" />
+    <img src="IMG_1799.jpeg" alt="LEGO foto 1799" />
+  </div>
+</section>
+<div class="fullscreen-overlay" id="fullscreenOverlay" aria-hidden="true">
+  <button class="close-btn" id="closeOverlay" aria-label="Cerrar imagen">×</button>
+  <img src="" alt="" id="fullscreenImage" />
+</div>
 
-      galleryImages.forEach((img) => {
-        img.addEventListener('click', () => openFullscreen(img.src, img.alt));
-      });
+<script>
+  const galleryImages = document.querySelectorAll('.gallery-grid img');
+  const overlay = document.getElementById('fullscreenOverlay');
+  const overlayImage = document.getElementById('fullscreenImage');
+  const closeButton = document.getElementById('closeOverlay');
 
-      closeButton.addEventListener('click', closeFullscreen);
-      overlay.addEventListener('click', (event) => {
-        if (event.target === overlay) {
-          closeFullscreen();
-        }
-      });
+  function openFullscreen(src, alt) {
+    overlayImage.src = src;
+    overlayImage.alt = alt;
+    overlay.classList.add('visible');
+    overlay.setAttribute('aria-hidden', 'false');
+  }
 
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && overlay.classList.contains('visible')) {
-          closeFullscreen();
-        }
-      });
-    </script>
-  </body>
-</html>
+  function closeFullscreen() {
+    overlay.classList.remove('visible');
+    overlay.setAttribute('aria-hidden', 'true');
+    overlayImage.src = '';
+  }
+
+  galleryImages.forEach((img) => {
+    img.addEventListener('click', () => openFullscreen(img.src, img.alt));
+  });
+
+  closeButton.addEventListener('click', closeFullscreen);
+  overlay.addEventListener('click', (event) => {
+    if (event.target === overlay) {
+      closeFullscreen();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && overlay.classList.contains('visible')) {
+      closeFullscreen();
+    }
+  });
+</script>

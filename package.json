@@ -1,7 +1,13 @@
 {
   "name": "bansibo.com",
   "version": "1.0.6",
-  "scripts": {},
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luis-y-bansibo/bansibo.com.git"

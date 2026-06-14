@@ -1,81 +1,21 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" href="logo.png" />
-    <title>bansibo world</title>
-    <style>
-      html {
-        cursor: url('carpeta-de-fotos/cursor.png'), auto;
-      }
-      body {
-        background-color: #ffffff00;
-        font-family: sans-serif;
-        text-align: center;
-        margin: 0;
-      }
-      .bansibo {
-        max-width: 100%;
-        height: auto;
-        &:hover {
-          animation: dance 2s 0s infinite;
-        }
-      }
-      @keyframes dance {
-        0% {
-          transform: rotate(0deg) scale(1);
-        }
-        10% {
-          transform: rotate(15deg) scale(0.3);
-        }
-        50% {
-          transform: rotate(-180deg) scale(1.1);
-        }
-        100% {
-          transform: rotate(-360deg) scale(1);
-        }
-      }
-      h1 {
-        font-size: 4em;
-      }
-      nav {
-        background-color: #00ccff;
-        display: flex;
-        align-items: center;
-        padding: 0 6px;
-      }
-      .logo {
-        margin-right: auto;
-        display: flex;
-      }
-      .logo img {
-        width: 50px;
-        height: 50px;
-      }
-      .link {
-        color: white;
-        text-decoration: none;
-        padding: 20px;
-        font-size: 1.5em;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35em;
-      }
-      .icon {
-        display: inline-flex;
-        font-size: 1.2em;
-      }
-    </style>      
-  </head>
-  <body>
-    <nav>
-      <a href="index.html" class="logo"><img src="logo.png" alt="Logo" /></a>
-      <a href="index.html" class="link"><span class="icon"></span>Inicio</a>
-      <a href="sobremi.html" class="link"><span class="icon"></span>Sobre mí</a>
-      <a href="https://github.com/luis-y-bansibo" class="link">GitHub</a>
-    </nav>
-    <h1>Hola, vienvenido a mi web ⌨️💻🖱️💿️🕹️</h1>
-    <img src="carpeta-de-fotos/bansibo.png" class="bansibo" alt="Bansibo" />
-  </body>
-</html>
+---
+layout: base.njk
+title: Inicio
+---
+
+<style>
+  html { cursor: url('/carpeta-de-fotos/cursor.png'), auto; }
+  body { background-color: transparent; }
+  .bansibo { max-width: 100%; height: auto; }
+  .bansibo:hover { animation: dance 2s 0s infinite; }
+  @keyframes dance {
+    0% { transform: rotate(0deg) scale(1); }
+    10% { transform: rotate(15deg) scale(0.3); }
+    50% { transform: rotate(-180deg) scale(1.1); }
+    100% { transform: rotate(-360deg) scale(1); }
+  }
+  h1 { font-size: 4em; }
+</style>
+
+<h1>Hola, vienvenido a mi web ⌨️💻🖱️💿️🕹️</h1>
+<img src="/carpeta-de-fotos/bansibo.png" class="bansibo" alt="Bansibo" />

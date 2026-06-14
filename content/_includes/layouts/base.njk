@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="logo.png" />
+    <title>{% if title %}{{ title }} - Bansibo{% else %}Bansibo{% endif %}</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        background-color: #ffffff;
+        color: #222;
+        text-align: center;
+      }
+      nav {
+        background-color: #00ccff;
+        display: flex;
+        align-items: center;
+        padding: 10px 12px;
+      }
+      .logo {
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+      }
+      .logo img {
+        width: 45px;
+        height: 45px;
+      }
+      .link {
+        color: white;
+        text-decoration: none;
+        padding: 14px 18px;
+        font-size: 1.1em;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35em;
+      }
+      main {
+        max-width: 720px;
+        margin: 32px auto;
+        padding: 0 16px;
+      }
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 0.35em;
+      }
+      p {
+        line-height: 1.7;
+        font-size: 1.15rem;
+      }
+      .avatar {
+        width: 180px;
+        height: auto;
+        margin: 24px auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    {% include "nav.njk" %}
+    <main>
+      {{ content | safe }}
+    </main>
+  </body>
+</html>
